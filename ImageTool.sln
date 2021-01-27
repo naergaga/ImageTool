@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageTool", "ImageTool\ImageTool.csproj", "{B88E96DA-6D97-44FF-92B5-FFCE2C6B11BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageToolTests", "ImageToolTests\ImageToolTests.csproj", "{D2549A0F-82B5-4ACA-A08F-41AA34213ED6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B88E96DA-6D97-44FF-92B5-FFCE2C6B11BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B88E96DA-6D97-44FF-92B5-FFCE2C6B11BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B88E96DA-6D97-44FF-92B5-FFCE2C6B11BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B88E96DA-6D97-44FF-92B5-FFCE2C6B11BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2549A0F-82B5-4ACA-A08F-41AA34213ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2549A0F-82B5-4ACA-A08F-41AA34213ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2549A0F-82B5-4ACA-A08F-41AA34213ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2549A0F-82B5-4ACA-A08F-41AA34213ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {882C79F2-4F6B-4A7E-8DB8-653FFABA01FC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,53 @@
+﻿<Window x:Class="ImageTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageTool"
+        xmlns:c="clr-namespace:ImageTool.Converters"
+        xmlns:m="clr-namespace:ImageTool.Models"
+        mc:Ignorable="d"
+        Title="ImageTool" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowDataContext/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="5 5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <c:ImageModeConverter x:Key="ImageModeConverter"/>
+        <c:TaskModeConverter x:Key="TaskModeConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="BtnOpenImage" Click="BtnOpenImage_Click">打开文件</Button>
+            <StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
+                <RadioButton GroupName="CBMode" IsChecked="{Binding Mode,Converter={StaticResource ImageModeConverter},ConverterParameter=0}">旋转</RadioButton>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
+                <ComboBox Width="60" ItemsSource="{Binding Degrees}" SelectedItem="{Binding Degree}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <Button Name="BtnStart" Click="BtnStart_Click">开始</Button>
+            <StackPanel Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Visibility="{Binding State,Converter={StaticResource TaskModeConverter}}" Foreground="Green">完成</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid ItemsSource="{Binding List}" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="文件名" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="新文件名" Binding="{Binding NewName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
